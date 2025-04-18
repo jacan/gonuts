@@ -13,11 +13,13 @@ func main() {
   // Controlling standard log output like date, line number, source file
   log.SetFlags(0)
 
-  message, err := greetings.Hello("Allen")
+  names := []string{"Robert Griesemer", " Rob Pike", "Ken Thompson"}
+
+  messages, err := greetings.Hellos(names)
   if(err != nil) {
     // Fatal causes process exit!
     log.Fatal(err)
   }
 
-  fmt.Println(message)
+  fmt.Println(messages)
 }
